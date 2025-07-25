@@ -1109,10 +1109,8 @@ static bool cqhci_halt(struct mmc_host *mmc, unsigned int timeout)
 
 	ret = cqhci_halted(cq_host);
 
-	if (!ret) {
-		mmc_card_error_logging(mmc->card, NULL, HALT_UNHALT_ERR);
+	if (!ret)
 		pr_debug("%s: cqhci: Failed to halt\n", mmc_hostname(mmc));
-	}
 
 	return ret;
 }
